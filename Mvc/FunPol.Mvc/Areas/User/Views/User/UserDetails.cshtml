@@ -1,0 +1,33 @@
+﻿@model IEnumerable<UserViewModel>
+@using FunPol.UnitOfWork.ViewModels
+
+<div class="top-buffer"></div>
+<div class="panel panel-primary">
+    <div class="panel-heading panel-head">Users</div>
+    <div class="panel-body">
+        <div class="top-buffer"></div>
+        <table id="tblUser" class="table table-bordered table-striped table-condensed">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Location)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                        
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>  
+@section scripts{
+<script src="~/js/user.js" asp-append-version="true"></script>
+}
